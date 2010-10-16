@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>S&#361;ji-Q</title>
+    <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	<script type="text/javascript" charset="utf-8" src="SAiOSAdPlugin.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/xui.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/GloveBox.js"></script>
+	<script type="text/javascript" charset="utf-8" src="app.js"></script>       
+  </head>
+  
+  <body id="stage" class="theme">
+		
+	  <div id="bodyBG">&nbsp;</div>
+		
+	  <div id="logoDiv" style="text-align:center;">
+		<img src="assets/SujiLogo.png" style="width:72px;height:auto"/>
+	  </div>
+	  
+	  <ul id="navList">
+		<li id="liQuiz" onclick="doSelected(0);">Quiz</li>
+		<li id="liEntry" onclick="doSelected(1);">Entry</li>
+		<li id="liAbout" onclick="doSelected(2);">About</li>
+	  </ul>
+	  
+	  <div id="tabSelector">&nbsp;</div>
+	  
+      <div id="easyDiv" class="viewPanel" style="position:absolute;display:block;left:0px;">
+
+		<br/>
+
+        <div id="info" class="Panel">
+			<h2>Tap here for a random number.</h2>
+			<br/>
+			
+			<div id="currentNumber" class="currentNumber" style="min-height:32px;text-align:center;font-size:32px;clear:none;" ></div>
+			
+        </div>
+		
+		<br/>
+		
+        <div id="answerPanel" class="Panel solveBtn">
+			<h2>Tap here for the answer.</h2>
+			<br/>
+			<div id="answerDiv" class="answerDiv" style="min-height:32px;text-align:center;font-size:32px;">&nbsp;</div>
+        </div>
+		
+		<br/>
+		
+      </div>
+	  
+
+      <div id="entryDiv" class="viewPanel" style="position:absolute;display:block;left:320px;">
+	  
+			<div class="Panel">
+				<div id="entryCurrentNumber" class="currentNumber" style="min-height:32px;text-align:center;vertical-align:middle;margin-top:8px;font-size:32px;"></div>
+			</div>
+			
+			<table style="width:100%;margin-top:-8px;margin-bottom:-8px;">
+				<tr>
+					<td class="numBtn">1</td>
+					<td class="numBtn">2</td>
+					<td class="numBtn">3</td>
+				</tr>
+				<tr>
+					<td class="numBtn">4</td>
+					<td class="numBtn">5</td>
+					<td class="numBtn">6</td>
+				</tr>
+				<tr>
+					<td class="numBtn">7</td>
+					<td class="numBtn">8</td>
+					<td class="numBtn">9</td>
+				</tr>
+				<tr >
+					<td class="delBtn"><img src="assets/DelBtn.png" style="opacity:0.7;" alt="x"/></td>
+					<td class="numBtn">0</td>
+					<td class="solveBtn">?</td>
+				</tr>
+				
+			</table>
+		
+			<div id="entryAnswerPanel" class="Panel" onclick="getAnswer()">
+				
+				<div id="entryAnswerDiv" class="answerDiv" style="padding-top:5px;vertical-align:middle;min-height:32px;text-align:center;font-size:32px;">
+					&nbsp;
+				</div>
+			</div>
+		
+			<br/>
+      </div>
+	  
+      <div id="aboutDiv" class="viewPanel" style="position:absolute;display:block;left:640px;margin-top:-12px;">
+	  
+			<div id="aboutPanel" class="Panel" style="color:#666;font-size:16px;line-height:24px;overflow:hidden;height:300px;">
+				
+				<div id="aboutScroll" style="width:295px">
+					<div style="width:285px;height:10px;">&nbsp;</div>
+				<p>
+				<strong>S&#361;ji-Q</strong> is a simple application to help you learn your Japanese numbers.  It includes a Quiz mode so you can test yourself, or an Entry mode
+				so you can quickly &quot;LookUp&quot; a number.  Numbers are spelled for you in english characters so you can practice saying them as well.
+				</p>
+				
+				<p>
+					The inspiration for <strong>S&#361;ji-Q</strong> came on a recent trip to Japan.  My wife is Japanese, so she was an invaluable guide to this apps creation.
+					 While we were in Japan, I noticed that I could pick out the numbers in conversations that people were having 
+					 around me, and once I got the numbers, I could kinda figure out what the conversation was about.  So I wrote <strong>S&#361;ji-Q</strong> to quiz myself.
+				</p>
+				
+				<p>
+					The name came from the Japanese &quot;S&#361;ji&quot; for number, and &quot;Q&quot; for quiz.  
+					All graphics, images and artwork are pictures my wife and I took while in Japan.
+					
+				</p>
+				
+				<p style="border-top:dotted 1px #6ca202;width:260px;">&nbsp;</p>
+				
+				<p>
+					This application was made with PhoneGap + XUI + GloveBox
+					
+				</p>
+				<div style="width:295px;height:10px;">&nbsp;</div>
+
+				</div>
+				
+			</div>
+	
+	  </div>
+      
+
+
+  </body>
+</html>
