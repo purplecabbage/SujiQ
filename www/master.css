@@ -14,6 +14,8 @@ body
   font-size:72%;
   line-height:1.5em;
   margin:0 0;
+  width:320px;
+  overflow:hidden;
 
 }
 

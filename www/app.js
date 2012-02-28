@@ -28,20 +28,29 @@ var currentView = "easyDiv";
 function init()
 {
 	document.addEventListener("touchmove", preventBehavior, false);
-	document.addEventListener("deviceready",initAds);
-	
 	resetNumber();
 
     x$("#info").touchstart(resetNumber);
+	x$("#info").on("mousedown",resetNumber);
 	
 	new GloveBox(document.getElementById("aboutScroll"));
 	
-	x$(".numBtn").touchstart(onTableCellClick);
-	x$(".solveBtn").touchstart(getAnswer);
-	x$(".delBtn").touchstart(onDelClick);
+	//x$(".numBtn").touchstart(onTableCellClick);
+	x$(".numBtn").on("mousedown",onTableCellClick);
+	
+	//x$(".solveBtn").touchstart(getAnswer);
+	x$(".solveBtn").on("mousedown",getAnswer);	
+	
+	//x$(".delBtn").touchstart(onDelClick);
+	x$(".delBtn").on("mousedown",onDelClick);
 	
 	loadNextBG();
+	
+	doSelected(0);
+	//document.addEventListener("deviceready",initAds);
+
 }
+
 
 function loadNextBG()
 {
@@ -61,7 +70,7 @@ function getNumber()
 
 function initAds()
 {
-	doSelected(0);
+	
 	document.addEventListener("iAdBannerViewDidFailToReceiveAdWithErrorEvent",onAdLoadFailed,false);
 	document.addEventListener("iAdBannerViewDidLoadAdEvent",onAdLoadSuccess,false);
 	
