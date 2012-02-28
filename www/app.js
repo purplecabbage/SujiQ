@@ -27,23 +27,29 @@ var currentView = "easyDiv";
 
 function init()
 {
+
 	document.addEventListener("touchmove", preventBehavior, false);
 	resetNumber();
 
-    x$("#info").touchstart(resetNumber);
-	x$("#info").on("mousedown",resetNumber);
+    
+	
 	
 	new GloveBox(document.getElementById("aboutScroll"));
 	
-	//x$(".numBtn").touchstart(onTableCellClick);
-	x$(".numBtn").on("mousedown",onTableCellClick);
-	
-	//x$(".solveBtn").touchstart(getAnswer);
-	x$(".solveBtn").on("mousedown",getAnswer);	
-	
-	//x$(".delBtn").touchstart(onDelClick);
-	x$(".delBtn").on("mousedown",onDelClick);
-	
+	if(GloveBox.CanTouch)
+	{
+		x$("#info").touchstart(resetNumber);
+		x$(".numBtn").touchstart(onTableCellClick);
+		x$(".solveBtn").touchstart(getAnswer);
+		$(".delBtn").touchstart(onDelClick);
+	}
+	else
+	{
+		x$("#info").on("mousedown",resetNumber);
+		x$(".numBtn").on("mousedown",onTableCellClick);	
+		x$(".solveBtn").on("mousedown",getAnswer);	
+		x$(".delBtn").on("mousedown",onDelClick);			
+	}
 	loadNextBG();
 	
 	doSelected(0);
