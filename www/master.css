@@ -82,8 +82,8 @@ body
 
 div 
 {
-  -webkit-transition-property: translate3D;
-  -webkit-transition-duration: 500ms;
+  transition-property: translate3D;
+  transition-duration: 500ms;
 }
 
 
@@ -95,7 +95,7 @@ div
 
 td
 {
-	-webkit-border-radius:3px;
+	border-radius:3px;
 	font-size:24px;
 	color:#FFF;
 	font-weight:bold;

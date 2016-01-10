@@ -1,12 +1,11 @@
 
 
 
-function preventBehavior(e)
-{
+function preventBehavior(e) {
 	e.preventDefault();
 }
 
-x$(window).load(init);
+document.addEventListener("DOMContentLoaded",init);
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -21,107 +20,88 @@ var randomBG = new Date().getMilliseconds() % 4;
 
 var currentView = "easyDiv";
 
+function init() {
 
-
-
-
-function init()
-{
-
-	document.addEventListener("touchmove", preventBehavior, false);
-	resetNumber();
-
-    
+	getNumber();
 	
-	
-	new GloveBox(document.getElementById("aboutScroll"));
-	
-	if(GloveBox.CanTouch)
-	{
-		x$("#info").touchstart(resetNumber);
-		x$(".numBtn").touchstart(onTableCellClick);
-		x$(".solveBtn").touchstart(getAnswer);
-		$(".delBtn").touchstart(onDelClick);
-	}
-	else
-	{
-		x$("#info").on("mousedown",resetNumber);
-		x$(".numBtn").on("mousedown",onTableCellClick);	
-		x$(".solveBtn").on("mousedown",getAnswer);	
-		x$(".delBtn").on("mousedown",onDelClick);			
-	}
+	mQ(".numBtn").forEach(function(item){
+		item.addEventListener("mousedown",onTableCellClick);
+	});
+
+	mQ("#info")[0].addEventListener("mousedown",getNumber);
+	mQ(".solveBtn")[0].addEventListener("mousedown",getAnswer);
+	mQ(".delBtn")[0].addEventListener("mousedown",onDelClick);
+
 	loadNextBG();
 	
 	doSelected(0);
 	//document.addEventListener("deviceready",initAds);
-
 }
 
 
-function loadNextBG()
-{
+function loadNextBG() {
+
 	randomBG++;
 	randomBG %= 4;
-	x$("#bodyBG").css({"background-image":"url(" + bgs[randomBG] + ")" });
+	mQ("#bodyBG")[0].style.backgroundImage = "url(" + bgs[randomBG] + ")";
 	setTimeout(loadNextBG,60000);
 }
 
-function getNumber()
-{
+function getNumber() {
+
 	var n = Math.floor(Math.random() * 100);
 	currentNum = n;
+	updateCurrentNumber();
 	return n;
 }
 
 
-function initAds()
-{
-	
+function initAds() {
+
 	document.addEventListener("iAdBannerViewDidFailToReceiveAdWithErrorEvent",onAdLoadFailed,false);
 	document.addEventListener("iAdBannerViewDidLoadAdEvent",onAdLoadSuccess,false);
 	
 	window.plugins.iAdPlugin.prepare(true);
-	
 }
 
-function onAdLoadSuccess()
-{
+function onAdLoadSuccess() {
 	window.plugins.iAdPlugin.showAd(true);
 }
 
-function onAdLoadFailed()
-{
+function onAdLoadFailed() {
 	window.plugins.iAdPlugin.showAd(false);
 }
 
+function updateCurrentNumber() {
 
-function onTableCellClick(e)
-{
+	mQ(".currentNumber").forEach(function(elem){
+		elem.innerText = currentNum + "";
+	});
+	mQ(".answerDiv").forEach(function(elem){
+		elem.innerText = "?";
+	});
+}
+
+function onTableCellClick(e) {
 	var num = parseInt(e.currentTarget.innerHTML);
-	
 	currentNum = (currentNum * 10 + num) % 100;
-	
-	x$(".currentNumber").html(currentNum + "");
-	x$(".answerDiv").html("?");
+	updateCurrentNumber();
+
 }
 
-function onDelClick(e)
-{
+function onDelClick(e) {
 	currentNum = 0;
-	
-	x$(".currentNumber").html(currentNum + "");
-	x$(".answerDiv").html("?");
+	updateCurrentNumber();
 }
 
 
-function tweenCallback()
-{
+function tweenCallback() {
 	//alert("wtf!");
 }
 
 
-function doSelected(arg)
-{
+function doSelected(arg) {
+	
     var left="0px";
 	var bgLeft = "0px";
 	var tabBGPos = "-260px";
@@ -144,26 +124,17 @@ function doSelected(arg)
         }
     }
     
-    x$("#easyDiv").css({"-webkit-transform":"translate3D(" + left + ",0px,0px)"}); 
-    x$("#entryDiv").css({"-webkit-transform":"translate3D(" + left + ",0px,0px)"});
-    x$("#aboutDiv").css({"-webkit-transform":"translate3D(" + left + ",0px,0px)"});    
-	
-	x$("#bodyBG").css({"-webkit-transform":"translate3D(" + bgLeft + ",0px,0px)"});	
-	
-	x$("#tabSelector").css({"-webkit-transform":"translate3D(" + tabBGPos + ",0px,0px)"});	
+    mQ("#easyDiv")[0].style.transform = "translate3D(" + left + ",0px,0px)";
+    mQ("#entryDiv")[0].style.transform = "translate3D(" + left + ",0px,0px)";
+    mQ("#aboutDiv")[0].style.transform = "translate3D(" + left + ",0px,0px)";    
+	mQ("#bodyBG")[0].style.transform = "translate3D(" + bgLeft + ",0px,0px)";   
+	mQ("#tabSelector")[0].style.transform = "translate3D(" + tabBGPos + ",0px,0px)";
 
 	currentView = arg;
+	
 }
 
-function resetNumber()
-{
-	getNumber();
-	x$(".currentNumber").html(currentNum + "");
-	x$(".answerDiv").html("?");
-}
-
-function getAnswer()
-{
+function getAnswer() {
 	var answer = "";
 	var ones = currentNum % 10;
 	var tens = ((currentNum % 100 ) - ones) / 10;
@@ -185,7 +156,9 @@ function getAnswer()
 		}
 	}
 	
-	x$(".answerDiv").html(answer);
+	mQ(".answerDiv").forEach(function(elem) {
+		elem.innerText = answer;
+	});
 }
 
 
