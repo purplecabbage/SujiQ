@@ -29,13 +29,14 @@ function init() {
 	});
 
 	mQ("#info")[0].addEventListener("mousedown",getNumber);
-	mQ(".solveBtn")[0].addEventListener("mousedown",getAnswer);
 	mQ(".delBtn")[0].addEventListener("mousedown",onDelClick);
-
+	mQ(".solveBtn").forEach(function (item) {
+		item.addEventListener("mousedown",getAnswer); 
+	});
+	
 	loadNextBG();
 	
 	doSelected(0);
-	//document.addEventListener("deviceready",initAds);
 }
 
 
