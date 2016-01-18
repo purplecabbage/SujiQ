@@ -14,7 +14,7 @@ body
   font-size:72%;
   line-height:1.5em;
   margin:0 0;
-  width:320px;
+  width:100%;
   overflow:hidden;
 
 }
@@ -37,6 +37,7 @@ body
 {
    left:0px;
    right:0px;
+   width:100%;
    margin:0px 0px 10px 0px;
    padding:0 0;
 }
@@ -89,8 +90,26 @@ div
 
 .viewPanel
 {
-    width:320px;
+    width:100%;
 	margin-top:0px;
+	position:absolute;
+	display:block;
+}
+
+#easyDiv
+{
+	left:0px;
+}
+
+#entryDiv 
+{
+	left:320px;
+}
+
+#aboutDiv
+{
+	left:640px;
+	margin-top:-12px;
 }
 
 td
@@ -161,6 +180,16 @@ td:active
 	float:left;
 	color:#a87;
 	font-weight:bold;
+}
+
+#aboutPanel
+{
+	color:#666;
+	font-size:16px;
+	line-height:24px;
+	overflow:scroll;
+	height:300px;
+	-webkit-overflow-scrolling: touch;
 }
 
 /* Content Styling */
