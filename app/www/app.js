@@ -96,28 +96,20 @@ function onDelClick(e) {
 }
 
 
-function tweenCallback() {
-	//alert("wtf!");
-}
-
-
 function doSelected(arg) {
 	
     var left="0px";
 	var bgLeft = "0px";
 	var tabBGPos = "-260px";
 
-    switch(arg)
-    {
-        case 1 : //"entryDiv" : 
-        {
+    switch(arg) {
+        case 1 : { //"entryDiv" : 
             left = "-320px";
 			bgLeft = "-80px";
 			tabBGPos = "-160px";
             break;
         }
-        case 2 : // "aboutDiv" : 
-        {
+        case 2 : { // "aboutDiv" :  
             left = "-640px";
 			bgLeft = "-160px";
 			tabBGPos = "-60px";
@@ -140,19 +132,15 @@ function getAnswer() {
 	var ones = currentNum % 10;
 	var tens = ((currentNum % 100 ) - ones) / 10;
 	
-	if(currentNum == 0) // special case
-	{
+	if(currentNum == 0) { // special case
 		answer += numbers[ones];
 	}
-	else
-	{
-		if(tens > 0)
-		{
+	else {
+		if(tens > 0) {
 			answer += tens == 1 ? "jyu " : numbers[tens] + " jyu ";
 		}
 	
-		if(ones > 0)
-		{
+		if(ones > 0) {
 			answer += numbers[ones];
 		}
 	}
