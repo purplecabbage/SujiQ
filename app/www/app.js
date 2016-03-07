@@ -56,23 +56,6 @@ function getNumber() {
 	return n;
 }
 
-
-function initAds() {
-
-	document.addEventListener("iAdBannerViewDidFailToReceiveAdWithErrorEvent",onAdLoadFailed,false);
-	document.addEventListener("iAdBannerViewDidLoadAdEvent",onAdLoadSuccess,false);
-	
-	window.plugins.iAdPlugin.prepare(true);
-}
-
-function onAdLoadSuccess() {
-	window.plugins.iAdPlugin.showAd(true);
-}
-
-function onAdLoadFailed() {
-	window.plugins.iAdPlugin.showAd(false);
-}
-
 function updateCurrentNumber() {
 
 	mQ(".currentNumber").forEach(function(elem){
