@@ -87,14 +87,14 @@ function doSelected(arg) {
 
     switch(arg) {
         case 1 : { //"entryDiv" : 
-            left = "-320px";
-			bgLeft = "-80px";
+            left = "-100%";
+			bgLeft = "-25%";
 			tabBGPos = "-160px";
             break;
         }
         case 2 : { // "aboutDiv" :  
-            left = "-640px";
-			bgLeft = "-160px";
+            left = "-200%";
+			bgLeft = "-50%";
 			tabBGPos = "-60px";
             break;
         }
