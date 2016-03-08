@@ -83,19 +83,27 @@ function doSelected(arg) {
 	
     var left="0px";
 	var bgLeft = "0px";
-	var tabBGPos = "-260px";
+	
+
+	var deltaWidth = ( window.innerWidth - 640 ) / 2;
+	var diff = window.innerWidth / 3;
+
+	var tabBGPos = (deltaWidth - diff) + "px";
+
+	//window.alert('deltaWidth ' + deltaWidth);
+
 
     switch(arg) {
         case 1 : { //"entryDiv" : 
             left = "-100%";
 			bgLeft = "-25%";
-			tabBGPos = "-160px";
+			tabBGPos = deltaWidth + "px";
             break;
         }
         case 2 : { // "aboutDiv" :  
             left = "-200%";
 			bgLeft = "-50%";
-			tabBGPos = "-60px";
+			tabBGPos = (deltaWidth + diff) + "px";
             break;
         }
     }
@@ -104,7 +112,8 @@ function doSelected(arg) {
     mQ("#entryDiv")[0].style.transform = "translate3D(" + left + ",0px,0px)";
     mQ("#aboutDiv")[0].style.transform = "translate3D(" + left + ",0px,0px)";    
 	mQ("#bodyBG")[0].style.transform = "translate3D(" + bgLeft + ",0px,0px)";   
-	mQ("#tabSelector")[0].style.transform = "translate3D(" + tabBGPos + ",0px,0px)";
+	mQ("#tabSelector")[0].style.backgroundPosition = tabBGPos + " 0";
+	//mQ("#tabSelector")[0].style.transform = "translate3D(" + tabBGPos + ",0px,0px)";
 
 	currentView = arg;
 	

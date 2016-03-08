@@ -74,12 +74,15 @@ body
 
 #tabSelector
 {
-	width:580px;
+	width:300%;
 	height:17px;
 	margin-top:20px;
 	
 	background-image: url(assets/selectedTab320.png);
-	background-repeat:no-repeat;
+	background-repeat:repeat-x;
+
+	transition-property:background-position;
+  	transition-duration: 300ms;
 }
 
 
@@ -90,12 +93,18 @@ div
 }
 
 
+
+.panelStack {
+	position:relative;
+	
+}
+
+
 .viewPanel
 {
     width:100%;
 	margin-top:0px;
 	position:absolute;
-	display:block;
 	/*border:solid 1px Blue;*/
 }
 
@@ -216,7 +225,9 @@ td:active
 	font-size:22px;
 	line-height:26px;
 	overflow:scroll;
-	height:300px;
+	
+	
+	border:solid 1px Red;
 	-webkit-overflow-scrolling: touch;
 }
 
