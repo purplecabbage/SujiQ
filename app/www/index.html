@@ -3,126 +3,123 @@
 <html>
   <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>S&#361;ji-Q</title>
     <link rel="stylesheet" href="master.css" type="text/css" charset="utf-8">
-    
-	<script type="text/javascript" charset="utf-8" src="app.js"></script>       
-	<script type="text/javascript" charset="utf-8" src="minQ.js"></script>   
+
+    <script type="text/javascript" charset="utf-8" src="app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="minQ.js"></script>
   </head>
   
   <body id="stage" class="theme">
-		
-	  <div id="bodyBG">&nbsp;</div>
-		
-	  <div id="logoDiv" style="text-align:center;">
-		<img src="assets/SujiLogo.png" style="width:72px;height:auto"/>
-	  </div>
-	  
-	  <ul id="navList">
-		<li id="liQuiz" onmousedown="doSelected(0);">Quiz</li>
-		<li id="liEntry" onmousedown="doSelected(1);">Entry</li>
-		<li id="liAbout" onmousedown="doSelected(2);">About</li>
-	  </ul>
-	  
-	  <div id="tabSelector">&nbsp;</div>
-	  
-      <div id="easyDiv" class="viewPanel">
 
-		<br/>
+      <div id="bodyBG">&nbsp;</div>
 
-        <div id="info" class="Panel">
-			<h2>Tap here for a random number.</h2>
-			<br/>
-			
-			<div id="currentNumber" class="currentNumber"></div>
-			
-        </div>
-		
-		<br/>
-		
-        <div id="answerPanel" class="Panel solveBtn">
-			<h2>Tap here for the answer.</h2>
-			<br/>
-			<div id="answerDiv" class="answerDiv">&nbsp;</div>
-        </div>
-		
-		<br/>
-		
+      <div id="logoDiv" style="text-align:center;">
+        <img src="assets/SujiLogo.png" style="width:72px;height:auto"/>
       </div>
-	  
 
-      <div id="entryDiv" class="viewPanel">
-	  
-			<div class="Panel">
-				<div id="entryCurrentNumber" class="currentNumber"></div>
-			</div>
-			
-			<table style="">
-				<tr>
-					<td class="numBtn">1</td>
-					<td class="numBtn">2</td>
-					<td class="numBtn">3</td>
-				</tr>
-				<tr>
-					<td class="numBtn">4</td>
-					<td class="numBtn">5</td>
-					<td class="numBtn">6</td>
-				</tr>
-				<tr>
-					<td class="numBtn">7</td>
-					<td class="numBtn">8</td>
-					<td class="numBtn">9</td>
-				</tr>
-				<tr >
-					<td class="delBtn"><img src="assets/DelBtn.png" style="opacity:0.7;" alt="x"/></td>
-					<td class="numBtn">0</td>
-					<td class="solveBtn">?</td>
-				</tr>
-				
-			</table>
-		
-			<div id="entryAnswerPanel" class="Panel solveBtn">
-				
-				<div id="entryAnswerDiv" class="answerDiv">
-					&nbsp;
-				</div>
-			</div>
-		
-			<br/>
-      </div>
-	  
-      <div id="aboutDiv" class="viewPanel">
-	  
-			<div id="aboutPanel" class="Panel">
-				
-				<div id="aboutScroll">
-				<p><strong>S&#361;ji-Q</strong> is a simple application to help you learn your Japanese numbers.  It includes a Quiz mode so you can test yourself, or an Entry mode
-				so you can quickly &quot;LookUp&quot; a number.  Numbers are spelled for you in english characters so you can practice saying them as well.
-				</p>
-				
-				<p>
-					The inspiration for <strong>S&#361;ji-Q</strong> came on a recent trip to Japan.  My wife is Japanese, so she was an invaluable guide to this apps creation.
-					 While we were in Japan, I noticed that I could pick out the numbers in conversations that people were having 
-					 around me, and once I got the numbers, I could kinda figure out what the conversation was about.  So I wrote <strong>S&#361;ji-Q</strong> to quiz myself.
-				</p>
-				
-				<p>
-					The name came from the Japanese &quot;S&#361;ji&quot; for number, and &quot;Q&quot; for quiz.  
-					All graphics, images and artwork are pictures my wife and I took while in Japan.
-					
-				</p>
+      <ul id="navList">
+        <li id="liQuiz" onmousedown="doSelected(0);">Quiz</li>
+        <li id="liEntry" onmousedown="doSelected(1);">Entry</li>
+        <li id="liAbout" onmousedown="doSelected(2);">About</li>
+      </ul>
 
-				<div>&nbsp;</div>
+      <div id="tabSelector">&nbsp;</div>
 
-				</div>
-				
-			</div>
-	
-	  </div>
-      
+      <div class="panelStack">
+          <div id="easyDiv" class="viewPanel">
+
+            <br/>
+
+            <div id="info" class="Panel">
+                <h2>Tap here for a random number.</h2>
+                <br/>
+
+                <div id="currentNumber" class="currentNumber"></div>
+
+            </div>
+            <br/>
+            <div id="answerPanel" class="Panel solveBtn">
+                <h2>Tap here for the answer.</h2>
+                <br/>
+                <div id="answerDiv" class="answerDiv">&nbsp;</div>
+            </div>
+
+            <br/>
+
+          </div>
+          
+
+          <div id="entryDiv" class="viewPanel">
+          
+                <div class="Panel">
+                    <div id="entryCurrentNumber" class="currentNumber"></div>
+                </div>
+                
+                <table style="">
+                    <tr>
+                        <td class="numBtn">1</td>
+                        <td class="numBtn">2</td>
+                        <td class="numBtn">3</td>
+                    </tr>
+                    <tr>
+                        <td class="numBtn">4</td>
+                        <td class="numBtn">5</td>
+                        <td class="numBtn">6</td>
+                    </tr>
+                    <tr>
+                        <td class="numBtn">7</td>
+                        <td class="numBtn">8</td>
+                        <td class="numBtn">9</td>
+                    </tr>
+                    <tr >
+                        <td class="delBtn"><img src="assets/DelBtn.png" style="opacity:0.7;" alt="x"/></td>
+                        <td class="numBtn">0</td>
+                        <td class="solveBtn">?</td>
+                    </tr>
+                    
+                </table>
+            
+                <div id="entryAnswerPanel" class="Panel solveBtn">
+                    
+                    <div id="entryAnswerDiv" class="answerDiv">
+                        &nbsp;
+                    </div>
+                </div>
+            
+                <br/>
+          </div>
+          
+          <div id="aboutDiv" class="viewPanel">
+          
+                <div id="aboutPanel" class="Panel">
+
+                    <div id="aboutScroll">
+                    <p><strong>S&#361;ji-Q</strong> is a simple application to help you learn your Japanese numbers.  It includes a Quiz mode so you can test yourself, or an Entry mode
+                    so you can quickly &quot;LookUp&quot; a number.  Numbers are spelled for you in english characters so you can practice saying them as well.
+                    </p>
+                    
+                    <p>
+                        The inspiration for <strong>S&#361;ji-Q</strong> came on a recent trip to Japan.  My wife is Japanese, so she was an invaluable guide to this apps creation.
+                         While we were in Japan, I noticed that I could pick out the numbers in conversations that people were having 
+                         around me, and once I got the numbers, I could kinda figure out what the conversation was about.  So I wrote <strong>S&#361;ji-Q</strong> to quiz myself.
+                    </p>
+
+                    <p>
+                        The name came from the Japanese &quot;S&#361;ji&quot; for number, and &quot;Q&quot; for quiz.  
+                        All graphics, images and artwork are pictures my wife and I took while in Japan.
+
+                    </p>
+
+                    <div>&nbsp;</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
   </body>
