@@ -4,11 +4,11 @@
 	/*-webkit-text-size-adjust: none; *//* prevent webkit from resizing text to fit */
 	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 	-webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
-} 
+}
 
-body 
+body
 {
-  background:#6ca202 none repeat scroll 0 0;  
+  background:#6ca202 none repeat scroll 0 0;
   color:#666;
   font-family:Helvetica;
   font-size:72%;
@@ -16,7 +16,6 @@ body
   margin:0 0;
   width:100%;
   overflow:hidden;
-
 }
 
 #bodyBG
@@ -31,7 +30,8 @@ body
 	width:150%;
 	height:100%;
 	background-repeat: no-repeat;
-	/*border:solid 1px Red;*/
+    background-size:100% auto;
+	border:none 1px Red;
 }
 
 
@@ -57,19 +57,19 @@ body
 	font-weight:bold;
 	margin:-30px -1px 0px -1px;
 	padding-top:30px;
-	
+
 	text-shadow: 0px 0px 4px #000;
 
-	
+
 	-webkit-tap-highlight-color: rgba(255,255,255,0.5);
-	
+
 }
 
 #liEntry
 {
 	border-left:1px dotted White;
 	border-right:1px dotted White;
-	
+
 }
 
 #tabSelector
@@ -77,18 +77,17 @@ body
 	width:300%;
 	height:17px;
 	margin-top:20px;
-	
+
 	background-image: url(assets/selectedTab320.png);
 	background-repeat:repeat-x;
 
-	transition-property:background-position;
-  	transition-duration: 300ms;
 }
 
 
-div 
+div
 {
-  transition-property: translate3D;
+
+  transition-property: translate3D, background-position;
   transition-duration: 500ms;
 }
 
@@ -96,7 +95,7 @@ div
 
 .panelStack {
 	position:relative;
-	
+
 }
 
 
@@ -113,7 +112,7 @@ div
 	left:0px;
 }
 
-#entryDiv 
+#entryDiv
 {
 	left:100%;
 }
@@ -124,7 +123,7 @@ div
 	margin-top:-12px;
 }
 
-table 
+table
 {
 	width:100%;
 	margin-top:-8px;
@@ -160,11 +159,11 @@ td:active
   border-radius: 5px;
   clear:both;
   margin:15px 6px 15px 6px;
-  
+
   padding:4px 0px 2px 10px;
 }
 
-.currentNumber 
+.currentNumber
 {
 	min-height:32px;
 	text-align:center;
@@ -173,7 +172,7 @@ td:active
 	font-size:32px;
 }
 
-.answerDiv 
+.answerDiv
 {
 	min-height:32px;
 	text-align:center;
@@ -225,9 +224,7 @@ td:active
 	font-size:22px;
 	line-height:26px;
 	overflow:scroll;
-	
-	
-	border:solid 1px Red;
+	border:none 1px Red;
 	-webkit-overflow-scrolling: touch;
 }
 
